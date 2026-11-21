@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en" data-theme="classic">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My Portfolio</title>
+<meta name="description" content="Portfolio">
+<meta name="ph" content="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#17181C;--mut:#5C6070;--bg:#FAF9F6;--ac:#2F4BFF;--ln:#E4E2DB;--card:#fff;--onac:#fff}
+html[data-theme=midnight]{--ink:#ECEEF5;--mut:#A3A8BC;--bg:#12131A;--ac:#8DA2FF;--ln:#2A2C3A;--card:#1B1D28;--onac:#0B0C12}
+html[data-theme=forest]{--ink:#14301F;--mut:#4F6A58;--bg:#F1F6EE;--ac:#1F7A4D;--ln:#D5E2D0;--card:#fff;--onac:#fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.65 system-ui,-apple-system,'Segoe UI',sans-serif;padding-bottom:110px}
+h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;letter-spacing:-.02em}
+a{color:var(--ac)}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+.hero{padding:88px 0 56px;border-bottom:1px solid var(--ln)}
+h1{font-size:clamp(40px,8vw,72px);line-height:1;margin:0 0 16px;font-weight:800}
+.tag{font-size:clamp(18px,3vw,24px);color:var(--mut);max-width:640px;margin:0}
+.sec{padding:48px 0;border-bottom:1px solid var(--ln)}
+.sec h2{font-size:30px;margin:0 0 14px;font-weight:800}
+.body p{margin:0 0 12px}
+.body img{max-width:100%;height:auto;border-radius:14px;display:block;margin:18px 0}
+.docs{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.docs a{border:1px solid var(--ac);border-radius:999px;padding:6px 16px;text-decoration:none;font-weight:600;font-size:16px}
+.ed{display:none!important}
+body.edit .ed{display:flex!important}
+body.edit [data-e]{outline:1px dashed #b4b9d8;outline-offset:6px}
+body.edit [data-e]:focus{outline:2px solid var(--ac)}
+body.edit .body img,body.edit .docs a{cursor:pointer}
+.tools{flex-wrap:wrap;gap:6px;margin-bottom:16px}
+button,select,input{font:600 15px system-ui,sans-serif}
+button{border:1px solid var(--ln);background:var(--card);color:var(--ink);border-radius:8px;padding:8px 14px;min-height:40px;cursor:pointer}
+button:hover{border-color:var(--ac)}
+#bar{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:#17181C;border:1px solid #3A3D4D;padding:10px;border-radius:20px;gap:8px;z-index:9;flex-wrap:wrap;justify-content:center;width:max-content;max-width:calc(100% - 24px)}
+#bar button,#bar select{background:#2B2D36;color:#fff;border:0;border-radius:10px;padding:8px 14px;min-height:44px}
+#bar .go,.go{background:var(--ac);color:var(--onac);border:0}
+a:focus-visible,button:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+#setup .card{margin:24px 0;padding:24px;background:var(--card);border:2px solid var(--ac);border-radius:18px}
+#setup h3{margin:0 0 8px;font-size:24px}
+#setup label{display:block;margin:12px 0;font-weight:600;font-size:15px}
+#setup input{display:block;width:100%;padding:10px 12px;border:1px solid var(--ln);border-radius:8px;margin-top:4px;background:var(--card);color:var(--ink)}
+#setup p{margin:0 0 8px;font-size:16px}
+#so{margin-top:16px;display:grid;gap:10px}
+#so[hidden]{display:none}
+</style>
+</head>
+<body>
+
+<div id="setup" class="wrap"><div class="card">
+<h3>First-time setup</h3>
+<p>Edit the page below, then create your private edit link. The code is never stored in this page; only a one-way hash of it is.</p>
+<label>GitHub username<input id="su" placeholder="yourname"></label>
+<label>Repository name<input id="sr" value="portfolio"></label>
+<label>Your email (to send the link to yourself)<input id="se" type="email" placeholder="you@gmail.com"></label>
+<button id="sg" class="go">Create my edit link</button>
+<div id="so" hidden>
+<p><strong>Your private edit link (shown once):</strong></p>
+<input id="sl" readonly>
+<a id="sm" href="#">Email this link to myself</a>
+<p>Next, click “Save” and upload the downloaded index.html to your GitHub repository. If you lose the link, run setup again on a fresh copy.</p>
+<button data-a="save">Save index.html</button>
+</div>
+</div></div>
+
+<header class="hero"><div class="wrap">
+<h1 data-e>Your Name</h1>
+<p class="tag" data-e>Student, designer or founder: replace this with one clear sentence about what you do and who you help.</p>
+</div></header>
+
+<main class="wrap">
+<section class="sec"><h2 data-e>About</h2><div class="body" data-e><p>Write a short introduction about who you are and what you do.</p></div><div class="docs"></div></section>
+<section class="sec"><h2 data-e>Projects</h2><div class="body" data-e><p>Describe a project: the problem, what you did, and the result.</p></div><div class="docs"></div></section>
+<section class="sec"><h2 data-e>Skills</h2><div class="body" data-e><p>List your key skills, tools and strengths.</p></div><div class="docs"></div></section>
+<section class="sec"><h2 data-e>Contact</h2><div class="body" data-e><p>Add your email, phone, LinkedIn or other links.</p></div><div class="docs"></div></section>
+</main>
+
+<div id="bar" class="ed">
+<select id="th" aria-label="Theme"><option value="classic">Classic</option><option value="midnight">Midnight</option><option value="forest">Forest</option></select>
+<select id="pt" aria-label="Section type"></select>
+<button data-a="add">Add section</button>
+<button data-a="save" class="go">Save</button>
+<button data-a="exit">Exit</button>
+</div>
+<input type="file" id="fi" hidden>
+
+<script>
+const $=s=>document.querySelector(s);
+const H=async s=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)))].map(b=>b.toString(16).padStart(2,'0')).join('');
+const T={About:'Write a short introduction about who you are and what you do.',Projects:'Describe a project: the problem, what you did, and the result.',Skills:'List your key skills, tools and strengths.',Education:'Add your school, degree or course, and the years.',Experience:'Add your role, company, dates and achievements.',Services:'List what you offer and who it is for.',Testimonials:'Add a short quote from a client or teacher.',Contact:'Add your email, phone, LinkedIn or other links.',Custom:'Write anything here.'};
+const TL='<button data-a="b"><b>B</b></button><button data-a="i"><i>I</i></button><button data-a="l">Link</button><button data-a="im">Image</button><button data-a="f">File</button><button data-a="up">↑</button><button data-a="dn">↓</button><button data-a="x">Delete</button>';
+let cb;
+function tools(s){const d=document.createElement('div');d.className='tools ed';d.innerHTML=TL;s.prepend(d)}
+function on(){$('#th').value=document.documentElement.dataset.theme||'classic';document.body.classList.add('edit');document.querySelectorAll('[data-e]').forEach(e=>e.contentEditable='true');document.querySelectorAll('.sec').forEach(tools)}
+function addSec(t){const s=document.createElement('section');s.className='sec';s.innerHTML='<h2 data-e></h2><div class="body" data-e><p></p></div><div class="docs"></div>';s.querySelector('h2').textContent=t;s.querySelector('p').textContent=T[t];s.querySelectorAll('[data-e]').forEach(e=>e.contentEditable='true');tools(s);$('main').append(s);s.scrollIntoView({behavior:'smooth'})}
+function img(f,body){const r=new FileReader();r.onload=()=>{const i=new Image();i.onload=()=>{const k=Math.min(1,1400/i.width),c=document.createElement('canvas');c.width=i.width*k;c.height=i.height*k;const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(i,0,0,c.width,c.height);const m=document.createElement('img');m.src=c.toDataURL('image/jpeg',.82);m.alt=f.name.replace(/\.[^.]+$/,'');body.append(m)};i.src=r.result};r.readAsDataURL(f)}
+function doc(f,s){if(f.size>3e6)return alert('Please keep files under 3 MB.');const r=new FileReader();r.onload=()=>{const a=document.createElement('a');a.href=r.result;a.download=f.name;a.textContent=f.name;s.querySelector('.docs').append(a)};r.readAsDataURL(f)}
+function save(){const d=document.documentElement.cloneNode(true);d.querySelector('body').classList.remove('edit');d.querySelectorAll('[contenteditable]').forEach(e=>e.removeAttribute('contenteditable'));d.querySelectorAll('.tools').forEach(e=>e.remove());d.querySelector('title').textContent=$('h1').textContent.trim()+' | Portfolio';const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['<!doctype html>\n'+d.outerHTML],{type:'text/html'}));a.download='index.html';a.click()}
+fi=$('#fi');fi.onchange=()=>{if(fi.files[0])cb(fi.files[0]);fi.value=''};
+Object.keys(T).forEach(k=>$('#pt').add(new Option(k,k)));
+$('#th').onchange=e=>document.documentElement.dataset.theme=e.target.value;
+document.addEventListener('mousedown',e=>{if(e.target.closest('button'))e.preventDefault()});
+document.addEventListener('click',e=>{
+const edit=document.body.classList.contains('edit');
+if(edit&&e.target.closest('.body img,.docs a')){e.preventDefault();if(confirm('Remove this item?'))e.target.closest('img,a').remove();return}
+const b=e.target.closest('[data-a]');if(!b)return;
+const a=b.dataset.a,s=b.closest('.sec');
+if(a=='save')save();
+else if(a=='add')addSec($('#pt').value);
+else if(a=='exit'){if(confirm('Leave edit mode? Unsaved changes will be lost.'))location.href=location.pathname}
+else if(a=='b'||a=='i')document.execCommand(a=='b'?'bold':'italic');
+else if(a=='l'){const u=prompt('Paste the link (https://… or mailto:…)');if(u)document.execCommand('createLink',false,u)}
+else if(a=='im'){fi.accept='image/*';cb=f=>img(f,s.querySelector('.body'));fi.click()}
+else if(a=='f'){fi.accept='.pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.txt,.zip';cb=f=>doc(f,s);fi.click()}
+else if(a=='up'){const p=s.previousElementSibling;if(p)p.before(s)}
+else if(a=='dn'){const n=s.nextElementSibling;if(n)n.after(s)}
+else if(a=='x'){if(confirm('Delete this section?'))s.remove()}
+});
+$('#sg').onclick=async()=>{
+const u=$('#su').value.trim(),r=$('#sr').value.trim()||'portfolio';
+if(!u)return alert('Enter your GitHub username.');
+const R=n=>[...crypto.getRandomValues(new Uint8Array(n))].map(x=>'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'[x%32]).join('');
+const s=R(16),c=R(28);
+$('meta[name=ph]').setAttribute('content',s+':'+await H(s+c));
+const l='https://'+u+'.github.io/'+r+'/index?code='+c;
+$('#sl').value=l;
+$('#sm').href='mailto:'+$('#se').value.trim()+'?subject='+encodeURIComponent('My portfolio edit link')+'&body='+encodeURIComponent(l);
+$('#so').hidden=false};
+(async()=>{
+const p=$('meta[name=ph]').content,c=new URLSearchParams(location.search).get('code');
+if(!p){on();return}
+$('#setup').remove();
+if(c){history.replaceState(null,'',location.pathname);const[s,h]=p.split(':');if(await H(s+c)===h)on()}
+})();
+</script>
+</body>
+</html>
